@@ -13,11 +13,7 @@ module.exports = {
         .setName("product")
         .setDescription("Select the product you ordered.")
         .addChoices(
-            {name: "Liveries", value: "Liveries"},
-            {name: "Clothing", value: "Clothing"},
-            {name: "Discord", value: "Discord"},
-            {name: "Graphics", value: "Graphics"},
-            {name: "Bot", value: "Bot"}
+            {name: "Embeds", value: "Embeds" }
         )
         .setRequired(true)
 
@@ -78,7 +74,7 @@ module.exports = {
         },
         {
           "type": 10,
-          "content": `${interaction.user} is the client of this order.\n\n**Designer:** ${designer}\n**Product:** ${product}\n**Rating:** ${rating}\n**Feedback:** ${feedback}\n\nThanks for ordering with **Tide Creations**. We hope you enjoyed your order experience, and we hope to see you again.`
+          "content": `${interaction.user} is the client of this order.\n\n**Designer:** ${designer}\n**Product:** ${product}\n**Rating:** ${rating}\n**Feedback:** ${feedback}\n\nThanks for ordering with **Klopp's Commissions**. We hope you enjoyed your order experience, and we hope to see you again.`
         }
       ]
     }
