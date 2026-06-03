@@ -105,18 +105,20 @@ module.exports = {
       const messages = await channel.messages.fetch({ limit: 10 });
 
       const panel = messages.find(m =>
-        m.components?.[0]?.components?.some(c =>
-          c.content?.includes("Ticket Details")
-        )
-      );
+  m.components?.[0]?.components?.some(c =>
+    c.content?.includes("Ticket Details") ||
+    c.content?.includes("Budget:")
+  )
+);
 
       let inquiry = "N/A";
 
       if (panel) {
 
         const textBlock = panel.components[0].components.find(c =>
-          c.content?.includes("Ticket Details")
-        );
+  c.content?.includes("Ticket Details") ||
+  c.content?.includes("Budget:")
+);
 
         if (textBlock) {
 
@@ -164,6 +166,35 @@ module.exports = {
 Deputy Username: ${username}
 Reason: ${reason}`;
           }
+          if (channel.name.startsWith("order-")) {
+    const orderBlock = panel?.components?.[0]?.components?.find(
+        c => c.content?.includes("Budget:")
+    );
+
+    if (orderBlock) {
+        const lines = orderBlock.content.split("\n");
+
+        const budget =
+            lines.find(l => l.includes("Budget:"))
+            ?.replace("**Budget:**", "")
+            ?.trim() || "N/A";
+
+        const quantity =
+            lines.find(l => l.includes("Quantity:"))
+            ?.replace("**Quantity:**", "")
+            ?.trim() || "N/A";
+
+        const description =
+            lines.find(l => l.includes("Description:"))
+            ?.replace("**Description:**", "")
+            ?.trim() || "N/A";
+
+        inquiry =
+`Budget: ${budget}
+Quantity: ${quantity}
+Description: ${description}`;
+    }
+}
         }
       }
 
