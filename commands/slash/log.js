@@ -44,10 +44,10 @@ module.exports = {
 
         }
         const client = interaction.options.getUser('client');
-        const ticekt = interaction.options.getChannel('ticket');
+        const ticket = interaction.options.getChannel('ticket');
         const amount_paid = interaction.options.getInteger('amount_paid');
         const product = interaction.options.getString('product');
-        const member = interaction.guild.members.fetch(client.id)
+        const member = await interaction.guild.members.fetch(client.id)
         const amount_received = Math.round(amount_paid * 0.7);
         await member.roles.add("1508185576367456408");
 
@@ -87,6 +87,10 @@ module.exports = {
       ]
     }
   ]
-})
+});
+    await interaction.reply({
+    content: "<:check:1511585270984736920> **Successfully** logged order.",
+    flags: 64
+});
     }
 }
