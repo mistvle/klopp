@@ -17,8 +17,5 @@ module.exports = {
 
     
 
-    client.user.setActivity("Klopp's Commissions", {
-      type: 3 // WATCHING
-    });
   }
 };
