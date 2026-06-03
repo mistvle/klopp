@@ -22,7 +22,7 @@ module.exports = {
             style: 3,
             type: 2,
             label: "Claim",
-            custom_id: "claim_ticket"
+            custom_id: "claim"
         };
 
         await interaction.update({
