@@ -7,6 +7,7 @@ module.exports = {
         if (!hasRole && !isAdmin) {
             return;
         }
+        const [userId] = (message.channel.topic || "").split("|");
         const reason = args.join(" ");
         await message.delete();
         await message.channel.send({
@@ -17,7 +18,7 @@ module.exports = {
       "components": [
         {
           "type": 10,
-          "content": "# <:bell:1511608062321098903> Close Request\n-# <@${userId}>"
+          "content": `# <:bell:1511608062321098903> Close Request\n-# <@${userId}>`
         },
         {
           "type": 14,
@@ -25,7 +26,7 @@ module.exports = {
         },
         {
           "type": 10,
-          "content": "${interaction.user} has requested to close this ticket. Click the close button if there's nothing else we can assist you with. If you need further assistance, click keep open."
+          "content": `${message.author} has requested to close this ticket. Click the close button if there's nothing else we can assist you with. If you need further assistance, click keep open.`
         },
         {
           "type": 14,
