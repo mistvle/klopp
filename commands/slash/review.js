@@ -55,7 +55,7 @@ module.exports = {
         const rating = interaction.options.getString("rating");
         const feedback = interaction.options.getString("feedback");
 
-        const channel = interaction.guild.channels.cache.get("1503425388955566310");
+        const channel = interaction.guild.channels.cache.get("1508180047952089139");
         await channel.send({
   "flags": 32768,
   "components": [
