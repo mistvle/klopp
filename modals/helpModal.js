@@ -139,7 +139,7 @@ const joinedDate = interaction.member.joinedAt.toLocaleDateString("en-US");
               "flow": {
                 "actions": []
               },
-              "custom_id": "claim_ticket"
+              "custom_id": "claim"
             },
             {
               "style": 4,
