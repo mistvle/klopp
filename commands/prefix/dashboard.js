@@ -6,6 +6,7 @@ module.exports = {
         if (!isAdmin) {
             return;
         }
+        await message.delete();
 
         const channel = message.guild.channels.cache.get("1508176846829912164");
         await channel.send({
