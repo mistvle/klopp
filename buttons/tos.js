@@ -1,5 +1,5 @@
 module.exports = {
-    customId: "tos",
+    customId: "order_tos",
 
     async execute (interaction) {
         return interaction.reply({
