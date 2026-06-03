@@ -61,22 +61,7 @@ module.exports = {
                 "name": "unknown",
                 "animated": false
               },
-              "url": "https://discohook.app/",
-            },
-            {
-              "style": 2,
-              "type": 2,
-              "label": "Self Role",
-              "emoji": {
-                "id": "1511502983320440872",
-                "name": "unknown",
-                "animated": false
-              },
-              "disabled": true,
-              "flow": {
-                "actions": []
-              },
-              "custom_id": "p_309099330613022743"
+              "url": "https://www.roblox.com/share/g/516364128",
             }
           ]
         },
