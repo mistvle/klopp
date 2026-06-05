@@ -62,7 +62,7 @@ module.exports = {
         }
 
         await axios.patch(
-            "https://itemconfiguration.roblox.com/v1/collectibles/7792b23c-2d06-46cc-8331-ee0f18a98fe1",
+            "https://itemconfiguration.roblox.com/v1/collectibles/3b2a95fe-a885-4551-80c6-faf0b24df67e",
             {
                 isFree: false,
                 optOutFromRegionalPricing: false,
