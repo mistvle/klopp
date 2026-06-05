@@ -3,6 +3,7 @@ module.exports = {
 
   async execute(client, message) {
     console.log("MESSAGE EVENT FIRED");
+    console.log("MESSAGE RECEIVED:", message.content);
     if (message.author.bot) return;
     if (!message.content.startsWith(client.prefix)) return;
 
