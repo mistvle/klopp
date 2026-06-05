@@ -7,7 +7,7 @@ module.exports = {
     if (message.author.bot) return;
 
     // ============== CONFIG ==============
-    const GROUP_ID = process.env.ROBLOX_GROUP_ID;
+    const GROUP_ID = "516364128";
     const ROBLOSECURITY = process.env.ROBLOX_COOKIE;
     // ====================================
 
