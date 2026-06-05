@@ -8,7 +8,7 @@ module.exports = {
   "components": [
     {
       "type": 10,
-      "content": `<:wave:1511634264045916290> Welcome to **Klopp's Commissions**, thanks for joining. We hope you enjoy your stay here. You can order in our [services](https://discord.com/channels/1507161354111418488/1508179935552995349) channel.`
+      "content": `<:wave:1511634264045916290> Welcome ${member} to **Klopp's Commissions**, thanks for joining. We hope you enjoy your stay here. You can order in our [services](https://discord.com/channels/1507161354111418488/1508179935552995349) channel.`
     },
     {
       "type": 1,
