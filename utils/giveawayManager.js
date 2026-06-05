@@ -80,7 +80,7 @@ function buildGiveawayPayload(giveaway) {
                 components: [
                     {
                         type: 10,
-                        content: `# ${CONFETTI} ${giveaway.prize}`
+                        content: `# <:Gift:1512332680212250715> ${giveaway.prize}`
                     },
                     {
                         type: 10,
