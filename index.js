@@ -23,7 +23,7 @@ client.modals = new Collection();
 
 // database
 client.db = db;
-
+const purchaseLogger = require("./utils/purchaseLogger");
 // handlers
 require("./handlers/commandHandler")(client);
 require("./handlers/eventHandler")(client);

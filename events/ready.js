@@ -15,6 +15,10 @@ module.exports = {
             status: "online"
         });
 
+            giveawayManager.loadGiveaways(client);
+
+    await purchaseLogger.startPurchaseLogger(client);
+
     
 
   }
