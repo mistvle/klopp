@@ -23,8 +23,7 @@ client.modals = new Collection();
 
 // database
 client.db = db;
-const giveawayManager = require("../utils/giveawayManager");
-
+const giveawayManager = require("./utils/giveawayManager");
 const purchaseLogger = require("./utils/purchaseLogger");
 // handlers
 require("./handlers/commandHandler")(client);
