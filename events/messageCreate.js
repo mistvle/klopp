@@ -12,8 +12,6 @@ module.exports = {
 
     const cmd = client.prefixCommands.get(cmdName);
 
-    const cmd = client.prefixCommands.get(cmdName);
-
 console.log("Command name:", cmdName);
 console.log("Commands loaded:", client.prefixCommands.size);
 console.log("Command found:", !!cmd);
