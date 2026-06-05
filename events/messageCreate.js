@@ -11,7 +11,14 @@ module.exports = {
     const cmdName = args.shift().toLowerCase();
 
     const cmd = client.prefixCommands.get(cmdName);
-    if (!cmd) return;
+
+    const cmd = client.prefixCommands.get(cmdName);
+
+console.log("Command name:", cmdName);
+console.log("Commands loaded:", client.prefixCommands.size);
+console.log("Command found:", !!cmd);
+
+if (!cmd) return;
 
     try {
       await cmd.execute(message, args);
