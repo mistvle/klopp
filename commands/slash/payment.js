@@ -129,7 +129,7 @@ module.exports = {
                             items: [
                                 {
                                     media: {
-                                        url: "https://media.discordapp.net/attachments/1510896301028409465/1510896476837122180/footer_v2.png?ex=6a226fff&is=6a211e7f&hm=f312bf37169c1bdb7d36b98ca95a93b164ee3fffb7e75d1cdfaee23986ae3cc9&=&format=webp&quality=lossless"
+                                        url: "https://media.discordapp.net/attachments/1503255904743719043/1511582257553608734/image.png?ex=6a2445ee&is=6a22f46e&hm=f5e91e2e960f1baa27835b9f6c57c43843b0f05c3e9451a03c791fb0879f8e5f&=&format=webp&quality=lossless"
                                     }
                                 }
                             ]
