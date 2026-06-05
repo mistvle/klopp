@@ -1,3 +1,5 @@
+const giveawayManager = require("../utils/giveawayManager");
+const purchaseLogger = require("../utils/purchaseLogger");
 module.exports = {
   name: "ready",
   once: true,
