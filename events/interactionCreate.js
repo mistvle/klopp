@@ -9,8 +9,20 @@ module.exports = {
       }
 
       if (interaction.isButton()) {
-        const btn = client.buttons.get(interaction.customId);
-        if (btn) await btn.execute(interaction);
+
+        console.log("BUTTON CLICKED:", interaction.customId);
+
+        const btn =
+          client.buttons.get(interaction.customId) ||
+          [...client.buttons.values()].find(button =>
+            interaction.customId.startsWith(button.customId)
+          );
+
+        console.log("BUTTON FOUND:", !!btn);
+
+        if (btn) {
+          await btn.execute(interaction);
+        }
       }
 
       if (interaction.isStringSelectMenu()) {
@@ -25,8 +37,12 @@ module.exports = {
 
     } catch (err) {
       console.error(err);
-      if (!interaction.replied) {
-        interaction.reply({ content: "Error occurred.", ephemeral: true });
+
+      if (!interaction.replied && !interaction.deferred) {
+        await interaction.reply({
+          content: "<:xmark:1511585286679822526> An error occurred.",
+          flags: 64
+        }).catch(() => {});
       }
     }
   }
