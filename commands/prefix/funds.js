@@ -69,17 +69,17 @@ module.exports = {
             fields: [
               {
                 name: "Current Funds",
-                value: `**${currentFunds.toLocaleString()} ROBUX**`,
+                value: `${currentFunds.toLocaleString()} ROBUX`,
                 inline: true
               },
               {
                 name: "Incoming Funds",
-                value: `**${pendingFunds.toLocaleString()} ROBUX**`,
+                value: `${pendingFunds.toLocaleString()} ROBUX`,
                 inline: true
               },
               {
                 name: "Total Funds",
-                value: `**${totalFunds.toLocaleString()} ROBUX**`,
+                value: `${totalFunds.toLocaleString()} ROBUX`,
                 inline: true
               }
             ],
