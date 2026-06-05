@@ -6,6 +6,12 @@ const dataDir = path.join(__dirname, "data");
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
 
 const db = new Database(path.join(dataDir, "database.sqlite"));
+db.prepare(`
+CREATE TABLE IF NOT EXISTS logged_transactions (
+    transaction_id TEXT PRIMARY KEY
+)
+`).run();
+
 
 db.prepare(`
 CREATE TABLE IF NOT EXISTS giveaways (
