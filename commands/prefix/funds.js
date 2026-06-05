@@ -8,7 +8,7 @@ module.exports = {
 
     // ============== CONFIG ==============
     const GROUP_ID = process.env.ROBLOX_GROUP_ID;
-    const ROBLOSECURITY = process.env.RBX_COOKIE;
+    const ROBLOSECURITY = process.env.ROBLOX_COOKIE;
     // ====================================
 
     // ===== PERMISSIONS (ADMIN OR ROLE) =====
