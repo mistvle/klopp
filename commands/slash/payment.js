@@ -138,6 +138,7 @@ module.exports = {
                 }
             ]
         });
+        console.log(userRes.data);
 
         await interaction.editReply({
             content: `<:check:1511585270984736920> Payment updated to ${amount} Robux.`
