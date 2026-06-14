@@ -1,7 +1,7 @@
 const discordTranscripts = require("discord-html-transcripts");
 
 module.exports = {
-  customId: "cclose",
+  customId: "crclose",
 
   async execute(interaction) {
 
