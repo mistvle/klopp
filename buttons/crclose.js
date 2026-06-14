@@ -5,12 +5,9 @@ module.exports = {
 
   async execute(interaction) {
 
-
-
-
     if (!interaction.channel.topic || !/^\d+(\|\d+)?$/.test(interaction.channel.topic)) {
       return interaction.reply({
-        content: "<:xmark:1511585286679822526> You can only close a ticket.",
+        content: "<:pearl_xmark:1512340774170132600> You can only close a ticket.",
         flags: 64
       });
     }
@@ -30,29 +27,29 @@ module.exports = {
       // =========================
       if (user) {
         await user.send({
-          "flags": 32768,
-          "components": [
+          flags: 32768,
+          components: [
             {
-              "type": 17,
-              "components": [
+              type: 17,
+              components: [
                 {
-                  "type": 10,
-                  "content": "# <:bell:1511608062321098903> Ticket Closed"
+                  type: 10,
+                  content: "# <:bell:1511608062321098903> Ticket Closed"
                 },
                 {
-                  "type": 10,
-                  "content": "Your ticket in **Klopp's Commissions** has been closed. If you need further assistance, do not hesitate to contact us again. We hope you enjoyed your experience with our team."
+                  type: 10,
+                  content: "Your ticket in **Klopp's Commissions** has been closed. If you need further assistance, do not hesitate to contact us again. We hope you enjoyed your experience with our team."
                 },
                 {
-                  "type": 14,
-                  "spacing": 2
+                  type: 14,
+                  spacing: 2
                 },
                 {
-                  "type": 12,
-                  "items": [
+                  type: 12,
+                  items: [
                     {
-                      "media": {
-                        "url": "https://media.discordapp.net/attachments/1503255904743719043/1511582257553608734/image.png?ex=6a20fa2e&is=6a1fa8ae&hm=7326317cd441c5432d1148a385ea0059e7fd336738068eead528c188462ff46c&=&format=webp&quality=lossless"
+                      media: {
+                        url: "https://media.discordapp.net/attachments/1503255904743719043/1511582257553608734/image.png?ex=6a2ed1ee&is=6a2d806e&hm=0aabf10fc72b8cf5ec57c3f8b6a1000ead14bfb1503eeb1764564a91774c84c8&=&format=webp&quality=lossless"
                       }
                     }
                   ]
@@ -64,33 +61,33 @@ module.exports = {
       }
 
       await interaction.reply({
-  "flags": 32832,
-  "components": [
-    {
-      "type": 17,
-      "components": [
-        {
-          "type": 10,
-          "content": "<a:loading:1511607952845574178> Closing ticket..."
-        },
-        {
-          "type": 14,
-          "spacing": 2
-        },
-        {
-          "type": 12,
-          "items": [
-            {
-              "media": {
-                "url": "https://media.discordapp.net/attachments/1503255904743719043/1511582257553608734/image.png?ex=6a20fa2e&is=6a1fa8ae&hm=7326317cd441c5432d1148a385ea0059e7fd336738068eead528c188462ff46c&=&format=webp&quality=lossless"
+        flags: 32832,
+        components: [
+          {
+            type: 17,
+            components: [
+              {
+                type: 10,
+                content: "<a:loading:1511607952845574178> Closing ticket..."
+              },
+              {
+                type: 14,
+                spacing: 2
+              },
+              {
+                type: 12,
+                items: [
+                  {
+                    media: {
+                      url: "https://media.discordapp.net/attachments/1503255904743719043/1511582257553608734/image.png?ex=6a2ed1ee&is=6a2d806e&hm=0aabf10fc72b8cf5ec57c3f8b6a1000ead14bfb1503eeb1764564a91774c84c8&=&format=webp&quality=lossless"
+                    }
+                  }
+                ]
               }
-            }
-          ]
-        }
-      ]
-    }
-  ]
-});
+            ]
+          }
+        ]
+      });
 
       const logChannel = interaction.guild.channels.cache.get("1508234986837512252");
 
@@ -100,20 +97,18 @@ module.exports = {
       const messages = await channel.messages.fetch({ limit: 10 });
 
       const panel = messages.find(m =>
-  m.components?.[0]?.components?.some(c =>
-    c.content?.includes("Ticket Details") ||
-    c.content?.includes("Budget:")
-  )
-);
+        m.components?.[0]?.components?.some(c =>
+          c.content?.includes("Ticket Details")
+        )
+      );
 
       let inquiry = "N/A";
 
       if (panel) {
 
         const textBlock = panel.components[0].components.find(c =>
-  c.content?.includes("Ticket Details") ||
-  c.content?.includes("Budget:")
-);
+          c.content?.includes("Ticket Details")
+        );
 
         if (textBlock) {
 
@@ -161,35 +156,6 @@ module.exports = {
 Deputy Username: ${username}
 Reason: ${reason}`;
           }
-          if (channel.name.startsWith("order-")) {
-    const orderBlock = panel?.components?.[0]?.components?.find(
-        c => c.content?.includes("Budget:")
-    );
-
-    if (orderBlock) {
-        const lines = orderBlock.content.split("\n");
-
-        const budget =
-            lines.find(l => l.includes("Budget:"))
-            ?.replace("**Budget:**", "")
-            ?.trim() || "N/A";
-
-        const quantity =
-            lines.find(l => l.includes("Quantity:"))
-            ?.replace("**Quantity:**", "")
-            ?.trim() || "N/A";
-
-        const description =
-            lines.find(l => l.includes("Description:"))
-            ?.replace("**Description:**", "")
-            ?.trim() || "N/A";
-
-        inquiry =
-`Budget: ${budget}
-Quantity: ${quantity}
-Description: ${description}`;
-    }
-}
         }
       }
 
@@ -209,7 +175,7 @@ Description: ${description}`;
         title: "Ticket Closed",
         color: 4079169,
         image: {
-          url: "https://media.discordapp.net/attachments/1503255904743719043/1511582257553608734/image.png?ex=6a20fa2e&is=6a1fa8ae&hm=7326317cd441c5432d1148a385ea0059e7fd336738068eead528c188462ff46c&=&format=webp&quality=lossless"
+          url: "https://media.discordapp.net/attachments/1512162995990695997/1512325765218308116/image.png?ex=6a23aea0&is=6a225d20&hm=0fb0d5eb4bceff89d29bf618bbb25a19a2933e8f004e97b415c7163943eb2786&=&format=webp&quality=lossless&width=1872&height=112"
         },
         description:
 `A ticket has been closed. Review information regarding it below.
@@ -239,12 +205,12 @@ Description: ${description}`;
 
       if (interaction.replied || interaction.deferred) {
         await interaction.followUp({
-          content: "<:xmark:1511585286679822526> An error occurred.",
+          content: "<:pearl_xmark:1512340774170132600> An error occurred.",
           flags: 64
         }).catch(() => {});
       } else {
         await interaction.reply({
-          content: "<:xmark:1511585286679822526> An error occurred.",
+          content: "<:pearl_xmark:1512340774170132600> An error occurred.",
           flags: 64
         }).catch(() => {});
       }
